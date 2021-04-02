@@ -1,16 +1,12 @@
-# Project name here
-> Summary description here.
+# Covid19 en Bs. As.
+> Aplicamos el metodo de <a href='https://github.com/ababino/babino2020masks'>babino2020masks</a> a datos de la ciudad de buenos aires
 
-
-This file will become your README and also the index of your documentation.
 
 ## Install
 
-`pip install your_project_name`
+`pip install babino2020masks`
 
-## How to use
-
-Fill me in please! Don't forget code examples:
+## Import
 
 ```python
 import pandas as pd
@@ -19,9 +15,13 @@ from babino2020masks.lasso import *
 from covid19bsas.core import *
 ```
 
+## Get the Data
+
 ```python
 df = get_bsas_data()
 ```
+
+## Plot
 
 ```python
 df.plot(x='Date', y=['Positives', 'Tests'], secondary_y=['Tests']);
