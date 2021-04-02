@@ -1,0 +1,29 @@
+name: update
+on:
+  schedule:
+  - cron: '8 13 * * *'
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        ref: master
+    - uses: actions/setup-python@v1
+      with:
+        python-version: '3.8'
+        architecture: 'x64'
+    - name: Install the library
+      run: |
+        pip install nbdev jupyter
+        pip install -e .
+    - name: install clean notebooks hook
+      run: nbdev_install_git_hooks
+    - name: Update readme
+      run: jupyter nbconvert --to notebook --execute --inplace index.ipynb
+    - name: build docs
+      run: nbdev_build_docs
+    - uses: stefanzweifel/git-auto-commit-action@v4
+      with:
+        commit_message: automatic readme update
+        branch: master
