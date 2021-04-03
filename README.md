@@ -10,6 +10,7 @@
 
 ```python
 import pandas as pd
+from fastcore.all import *
 from babino2020masks.core import *
 from babino2020masks.lasso import *
 from covid19bsas.core import *
@@ -38,4 +39,28 @@ ax.set_title(f'{df.tail(1).Date[0]:%B %d, %Y}, Positivity Odds:{df.tail(1).Odds.
 
 
 ![png](docs/images/output_8_0.png)
+
+
+```python
+sdf = df.dropna().copy()
+lics = LassoICSelector(sdf['Odds'], 'bic')
+lics.fit_best_alpha()
+```
+
+```python
+sdf['Fit'], sdf['Odds_l'], sdf['Odds_u'] = lics.odds_hat_l_u()
+ax = plot_data_and_fit(sdf, 'Date', 'Odds', 'Fit', 'Odds_l', 'Odds_u', figsize=(10, 7))
+```
+
+
+![png](docs/images/output_10_0.png)
+
+
+```python
+sdf['R'], sdf['Rl'], sdf['Ru'] = lics.rt()
+ax = plot_data_and_fit(sdf, 'Date', None, 'R', 'Rl', 'Ru', figsize=(10, 7), logy=False, palette=[colorblind[1],colorblind[1]])
+```
+
+
+![png](docs/images/output_11_0.png)
 
