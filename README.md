@@ -16,9 +16,6 @@ from babino2020masks.lasso import *
 from covid19bsas.core import *
 ```
 
-    Matplotlib is building the font cache; this may take a moment.
-
-
 ## Get the Data
 
 ```python
