@@ -47,6 +47,22 @@ lics = LassoICSelector(sdf['Odds'], 'bic')
 lics.fit_best_alpha()
 ```
 
+    /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages/sklearn/linear_model/_base.py:133: FutureWarning: The default of 'normalize' will be set to False in version 1.2 and deprecated in version 1.4.
+    If you wish to scale the data, use Pipeline with a StandardScaler in a preprocessing stage. To reproduce the previous behavior:
+    
+    from sklearn.pipeline import make_pipeline
+    
+    model = make_pipeline(StandardScaler(with_mean=False), LassoLars())
+    
+    If you wish to pass a sample_weight parameter, you need to pass it as a fit parameter to each step of the pipeline as follows:
+    
+    kwargs = {s[0] + '__sample_weight': sample_weight for s in model.steps}
+    model.fit(X, y, **kwargs)
+    
+    Set parameter alpha to: original_alpha * np.sqrt(n_samples). 
+      warnings.warn(
+
+
 ```python
 sdf['Fit'], sdf['Odds_l'], sdf['Odds_u'] = lics.odds_hat_l_u()
 ax = plot_data_and_fit(sdf, 'Date', 'Odds', 'Fit', 'Odds_l', 'Odds_u', figsize=(10, 7))
