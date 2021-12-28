@@ -2,7 +2,9 @@
 
 __all__ = ["index", "modules", "custom_doc_links", "git_url"]
 
-index = {"get_bsas_data": "00_core.ipynb"}
+index = {"get_bsas_data": "00_core.ipynb",
+         "get_bsas_data2": "00_core.ipynb",
+         "LassoICSelector.fit": "00_core.ipynb"}
 
 modules = ["core.py"]
 
