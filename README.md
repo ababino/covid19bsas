@@ -23,100 +23,6 @@ from covid19bsas.core import *
 df = get_bsas_data2()
 ```
 
-```python
-df.tail()
-```
-
-
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Date</th>
-      <th>Tests</th>
-      <th>Positives</th>
-      <th>Negatives</th>
-      <th>Odds</th>
-      <th>p</th>
-    </tr>
-    <tr>
-      <th>date</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>2021-12-16</th>
-      <td>2021-12-16</td>
-      <td>20459.0</td>
-      <td>1244.0</td>
-      <td>19215.0</td>
-      <td>0.064741</td>
-      <td>0.060805</td>
-    </tr>
-    <tr>
-      <th>2021-12-17</th>
-      <td>2021-12-17</td>
-      <td>18486.0</td>
-      <td>1401.0</td>
-      <td>17085.0</td>
-      <td>0.082002</td>
-      <td>0.075787</td>
-    </tr>
-    <tr>
-      <th>2021-12-18</th>
-      <td>2021-12-18</td>
-      <td>23305.0</td>
-      <td>1180.0</td>
-      <td>22125.0</td>
-      <td>0.053333</td>
-      <td>0.050633</td>
-    </tr>
-    <tr>
-      <th>2021-12-19</th>
-      <td>2021-12-19</td>
-      <td>15074.0</td>
-      <td>1074.0</td>
-      <td>14000.0</td>
-      <td>0.076714</td>
-      <td>0.071249</td>
-    </tr>
-    <tr>
-      <th>2021-12-20</th>
-      <td>2021-12-20</td>
-      <td>17363.0</td>
-      <td>1404.0</td>
-      <td>15959.0</td>
-      <td>0.087975</td>
-      <td>0.080862</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-
-
 ## Plot
 
 ```python
@@ -124,7 +30,7 @@ df.plot(x='Date', y=['Positives', 'Tests'], secondary_y=['Tests'], figsize=(10, 
 ```
 
 
-![png](docs/images/output_8_0.png)
+![png](docs/images/output_7_0.png)
 
 
 ```python
@@ -138,7 +44,7 @@ ax.set_title(f'{df.tail(1).Date.iloc[0]:%B %d, %Y}, Positivity Odds:{df.tail(1).
 
 
 
-![png](docs/images/output_9_1.png)
+![png](docs/images/output_8_1.png)
 
 
 ```python
@@ -157,7 +63,7 @@ ax.set_title(f'{sdf.tail(1).Date.iloc[0]:%B %d, %Y}, Fit Positivity Odds:{sdf.ta
 ```
 
 
-![png](docs/images/output_11_0.png)
+![png](docs/images/output_10_0.png)
 
 
 ```python
@@ -167,5 +73,5 @@ ax.set_title(f'{sdf.tail(1).Date[0]:%B %d, %Y}, $R_t$:{sdf.tail(1).R.values[0]:2
 ```
 
 
-![png](docs/images/output_12_0.png)
+![png](docs/images/output_11_0.png)
 
