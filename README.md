@@ -30,7 +30,9 @@ df.plot(x='Date', y=['Positives', 'Tests'], secondary_y=['Tests'], figsize=(10, 
 ```
 
 
+    
 ![png](docs/images/output_7_0.png)
+    
 
 
 ```python
@@ -44,7 +46,9 @@ ax.set_title(f'{df.tail(1).Date.iloc[0]:%B %d, %Y}, Positivity Odds:{df.tail(1).
 
 
 
+    
 ![png](docs/images/output_8_1.png)
+    
 
 
 ```python
@@ -63,7 +67,9 @@ ax.set_title(f'{sdf.tail(1).Date.iloc[0]:%B %d, %Y}, Fit Positivity Odds:{sdf.ta
 ```
 
 
+    
 ![png](docs/images/output_10_0.png)
+    
 
 
 ```python
@@ -73,5 +79,7 @@ ax.set_title(f'{sdf.tail(1).Date[0]:%B %d, %Y}, $R_t$:{sdf.tail(1).R.values[0]:2
 ```
 
 
+    
 ![png](docs/images/output_11_0.png)
+    
 
