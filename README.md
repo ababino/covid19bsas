@@ -40,7 +40,7 @@ ax = plot_data_and_fit(df, 'Date', 'Odds', None, None, None, figsize=(10, 7))
 ax.set_title(f'{df.tail(1).Date.iloc[0]:%B %d, %Y}, Positivity Odds:{df.tail(1).Odds.values[0]:2.3}');
 ```
 
-    /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages/babino2020masks/core.py:156: UserWarning: Attempted to set non-positive bottom ylim on a log-scaled axis.
+    /opt/hostedtoolcache/Python/3.8.13/x64/lib/python3.8/site-packages/babino2020masks/core.py:156: UserWarning: Attempted to set non-positive bottom ylim on a log-scaled axis.
     Invalid limit will be ignored.
       ax.set_ylim([0.9*min_y, 1.1*max_y])
 
@@ -57,7 +57,7 @@ lics = LassoICSelector(sdf['Odds'], 'bic')
 lics.fit_best_alpha()
 ```
 
-    /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages/sklearn/linear_model/_base.py:133: FutureWarning: The default of 'normalize' will be set to False in version 1.2 and deprecated in version 1.4.
+    /opt/hostedtoolcache/Python/3.8.13/x64/lib/python3.8/site-packages/sklearn/linear_model/_base.py:133: FutureWarning: The default of 'normalize' will be set to False in version 1.2 and deprecated in version 1.4.
     If you wish to scale the data, use Pipeline with a StandardScaler in a preprocessing stage. To reproduce the previous behavior:
     
     from sklearn.pipeline import make_pipeline
